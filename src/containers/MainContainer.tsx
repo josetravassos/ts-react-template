@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import About from '../containers/About';
 import Users from '../containers/Users';
-import { IUser } from '../models/user.model'
 import Home from '../containers/Home';
 
 
@@ -32,7 +31,7 @@ function MainContainer() {
                         <About />
                     </Route>
                     <Route path="/users">
-                        <Users firstName="Jose" lastName="Travassos" email="jose@jose.ca" />
+                        <Users name="Jose" email="jose@jose.ca" />
                     </Route>
                     <Route path="/">
                         <Home />
