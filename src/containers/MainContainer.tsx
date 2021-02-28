@@ -2,41 +2,31 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 import About from '../containers/About';
-import Users from '../containers/Users';
 import Home from '../containers/Home';
+import TopNavbar from '../components/TopNavbar';
+import HeroImage from '../components/HeroImage';
+import OutterSection from '../components/OutterSection';
 
 
 function MainContainer() {
     return (
         <Router>
             <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/users">Users</Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+                <TopNavbar>
+                    <Link to="/">Home</Link>&nbsp;-&nbsp;<Link to="/about">About</Link>
+                </TopNavbar>
+                <HeroImage />
                 <Switch>
+                    <Route path="/">
+                        <OutterSection>
+                            <Home />
+                        </OutterSection>
+                    </Route>
                     <Route path="/about">
                         <About />
                     </Route>
-                    <Route path="/users">
-                        <Users name="Jose" email="jose@jose.ca" />
-                    </Route>
-                    <Route path="/">
-                        <Home />
-                    </Route>
                 </Switch>
+
             </div>
         </Router>
 

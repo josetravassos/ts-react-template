@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  # HERO
+\*------------------------------------*/
+
+.zsg-hero__wrapper {
+  background: $color-white500;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  min-height: 372px;
+  @include breakpoint(sm) {
+    min-height: 240px;
+  }
+}
+
+.zsg-hero__inner {
+  //  display: grid;
+  display: flex;
+  //  column-gap: 16px;
+  //  row-gap: 16px;
+  //   grid-template-columns: minmax(0, 1fr);
+  //   grid-template-rows: auto minmax(0, 1fr);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: $space-xlg 0;
+
+  //   @include breakpoint(sm) {
+  //     grid-template-columns: auto minmax(0, 1fr);
+  //     grid-template-rows: minmax(0, 1fr);
+  //     justify-content: flex-start;
+  //     text-align: left;
+  //   }
+}
