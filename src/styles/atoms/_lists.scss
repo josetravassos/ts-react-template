@@ -1,0 +1,62 @@
+/*------------------------------------*\
+  # LISTS
+\*------------------------------------*/
+.zsg-list--type-none {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li + li {
+    margin-top: $space-xxxsm;
+  }
+}
+
+.zsg-list--unordered {
+  @include basic-list();
+}
+
+.zsg-list--ordered {
+  counter-reset: ordered-counter;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 16px;
+
+  li {
+    counter-increment: ordered-counter;
+    align-items: center;
+    display: flex;
+  }
+
+  li::before {
+    content: counter(ordered-counter);
+    color: $color-white;
+    background-color: $color-black500;
+    align-items: center;
+    flex: 0 0 auto;
+    justify-content: center;
+    margin: 0 8px 0 0;
+    text-align: center;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+  }
+}
+
+.zsg-list--ordered-purple li::before {
+  background-color: $color-purple100;
+  color: $color-purple700;
+}
+.zsg-list--ordered-blue li::before {
+  background-color: $color-blue100;
+  color: $color-blue700;
+}
+
+@each $name, $palette in $colour-palette-list-lc {
+  .zsg-list--ordered-#{$name} li::before {
+    background-color: nth($palette, 5);
+  }
+}

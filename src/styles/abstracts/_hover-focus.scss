@@ -1,0 +1,35 @@
+@mixin outline-focus() {
+  &:focus {
+    outline: 1px $color-blue500 solid;
+  }
+}
+
+@mixin remove-focus-outline {
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin outline-hover-focus() {
+  &:hover,
+  &:focus {
+    outline: 1px $color-blue500 solid;
+  }
+}
+
+@mixin button-hover-focus() {
+  &:hover,
+  &:focus {
+    background: $color-white100;
+    color: $color-blue700;
+  }
+
+  &:active {
+    background: $color-white500;
+    color: $color-blue900;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

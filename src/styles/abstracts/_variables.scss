@@ -1,0 +1,325 @@
+/*-------------------------------------------------------------------*\
+  ### ABSTRACTS
+\*-------------------------------------------------------------------*/
+/*------------------------------------*\
+  # TOKENS
+\*------------------------------------*/
+
+// Texts
+
+$font-base: 18px;
+$font-lg: 24px;
+$font-sm: 14px;
+
+$line-height-base: 24px;
+$line-height-lg: 32px;
+$line-height-sm: 16px;
+
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+$border-radius-sm: 4px;
+$border-radius-base: 6px;
+$border-radius-large: 8px;
+
+// Colors
+
+$color-black: #000;
+$color-white: #fff;
+
+$palette-blues: (
+  50: #e9f7fc,
+  100: #d4eff9,
+  300: #68c7e9,
+  500: #26afdf,
+  700: #027baf,
+  900: #13576f,
+);
+
+$palette-cornflowers: (
+  50: #f0f4fb,
+  100: #e1e9f7,
+  300: #68c7e9,
+  500: #4b6eb2,
+  700: #4b6eb2,
+  900: #34496b,
+);
+
+$palette-purples: (
+  50: #f7f1fa,
+  100: #f0e3f6,
+  300: #cb9edf,
+  500: #b474d1,
+  700: #905da7,
+  900: #5a3a68,
+);
+
+$palette-emeralds: (
+  50: #edf7f2,
+  100: #dcf0e6,
+  300: #86cdaa,
+  500: #52b886,
+  700: #3b8460,
+  900: #285b42,
+);
+
+$palette-greens: (
+  50: #f2f9e8,
+  100: #e6f3d2,
+  300: #a8d563,
+  500: #82c31f,
+  700: #44820d,
+  900: #41610f,
+);
+
+$palette-olives: (
+  50: #f8f9e9,
+  100: #d2d868,
+  300: #d2d868,
+  500: #747c0f,
+  700: #747c0f,
+  900: #747c0f,
+);
+
+$palette-yellows: (
+  50: #fffaea,
+  100: #fff5d5,
+  300: #fedc6e,
+  500: #fdcd2f,
+  700: #8b710b,
+  900: #665213,
+);
+
+$palette-pinks: (
+  50: #ffecf0,
+  100: #ffdae2,
+  300: #ff7a97,
+  500: #ff446c,
+  700: #d23859,
+  900: #802035,
+);
+
+$palette-reds: (
+  50: #feefec,
+  100: #fddfd9,
+  300: #fa917b,
+  500: #d73b24,
+  700: #d73b24,
+  900: #7b3021,
+);
+
+$palette-magentas: (
+  50: #fbeef5,
+  100: #ffdae2,
+  300: #e48cbb,
+  500: #d95c9f,
+  700: #bd4784,
+  900: #802035,
+);
+
+$palette-oranges: (
+  50: #fdf2e8,
+  100: #fce6d1,
+  300: #f6a660,
+  500: #f2801b,
+  700: #b15d13,
+  900: #79400d,
+);
+
+$palette-golds: (
+  50: #fef6e9,
+  100: #fdeed3,
+  300: #fac366,
+  500: #f8aa24,
+  700: #ab630d,
+  900: #63440e,
+);
+
+$palette-whites: (
+  50: #ffffff,
+  100: #ffffff,
+  300: #fafafa,
+  500: #f1f1f1,
+  700: #e1e1e1,
+  900: #cccccc,
+);
+
+$palette-greys: (
+  50: #b3b3b3,
+  100: #b3b3b3,
+  300: #aeaeae,
+  500: #828282,
+  700: #737373,
+  900: #484848,
+);
+
+$palette-blacks: (
+  50: #323232,
+  100: #323232,
+  300: #262626,
+  500: #1f1f1f,
+  700: #1a1a1a,
+  900: #121212,
+);
+
+///   Color Definitions
+$color-blue50: map-get($palette-blues, 50);
+$color-blue100: map-get($palette-blues, 100);
+$color-blue300: map-get($palette-blues, 300);
+$color-blue500: map-get($palette-blues, 500);
+$color-blue700: map-get($palette-blues, 700);
+$color-blue900: map-get($palette-blues, 900);
+
+$color-cornflower50: map-get($palette-cornflowers, 50);
+$color-cornflower100: map-get($palette-cornflowers, 100);
+$color-cornflower300: map-get($palette-cornflowers, 300);
+$color-cornflower500: map-get($palette-cornflowers, 500);
+$color-cornflower700: map-get($palette-cornflowers, 700);
+$color-cornflower900: map-get($palette-cornflowers, 900);
+
+$color-purple50: map-get($palette-purples, 50);
+$color-purple100: map-get($palette-purples, 100);
+$color-purple300: map-get($palette-purples, 300);
+$color-purple500: map-get($palette-purples, 500);
+$color-purple700: map-get($palette-purples, 700);
+$color-purple900: map-get($palette-purples, 900);
+
+$color-green50: map-get($palette-greens, 50);
+$color-green100: map-get($palette-greens, 100);
+$color-green300: map-get($palette-greens, 300);
+$color-green500: map-get($palette-greens, 500);
+$color-green700: map-get($palette-greens, 700);
+$color-green900: map-get($palette-greens, 900);
+
+$color-emerald50: map-get($palette-emeralds, 50);
+$color-emerald100: map-get($palette-emeralds, 100);
+$color-emerald300: map-get($palette-emeralds, 300);
+$color-emerald500: map-get($palette-emeralds, 500);
+$color-emerald700: map-get($palette-emeralds, 700);
+$color-emerald900: map-get($palette-emeralds, 900);
+
+$color-olive50: map-get($palette-olives, 50);
+$color-olive100: map-get($palette-olives, 100);
+$color-olive300: map-get($palette-olives, 300);
+$color-olive500: map-get($palette-olives, 500);
+$color-olive700: map-get($palette-olives, 700);
+$color-olive900: map-get($palette-olives, 900);
+
+$color-yellow50: map-get($palette-yellows, 50);
+$color-yellow100: map-get($palette-yellows, 100);
+$color-yellow300: map-get($palette-yellows, 300);
+$color-yellow500: map-get($palette-yellows, 500);
+$color-yellow700: map-get($palette-yellows, 700);
+$color-yellow900: map-get($palette-yellows, 900);
+
+$color-red50: map-get($palette-reds, 50);
+$color-red100: map-get($palette-reds, 100);
+$color-red300: map-get($palette-reds, 300);
+$color-red500: map-get($palette-reds, 500);
+$color-red700: map-get($palette-reds, 700);
+$color-red900: map-get($palette-reds, 900);
+
+$color-magenta50: map-get($palette-magentas, 50);
+$color-magenta100: map-get($palette-magentas, 100);
+$color-magenta300: map-get($palette-magentas, 300);
+$color-magenta500: map-get($palette-magentas, 500);
+$color-magenta700: map-get($palette-magentas, 700);
+$color-magenta900: map-get($palette-magentas, 900);
+
+$color-pink50: map-get($palette-pinks, 50);
+$color-pink100: map-get($palette-pinks, 100);
+$color-pink300: map-get($palette-pinks, 300);
+$color-pink500: map-get($palette-pinks, 500);
+$color-pink700: map-get($palette-pinks, 700);
+$color-pink900: map-get($palette-pinks, 900);
+
+$color-orange50: map-get($palette-oranges, 50);
+$color-orange100: map-get($palette-oranges, 100);
+$color-orange300: map-get($palette-oranges, 300);
+$color-orange500: map-get($palette-oranges, 500);
+$color-orange700: map-get($palette-oranges, 700);
+$color-orange900: map-get($palette-oranges, 900);
+
+$color-white100: map-get($palette-whites, 100);
+$color-white300: map-get($palette-whites, 300);
+$color-white500: map-get($palette-whites, 500);
+$color-white700: map-get($palette-whites, 700);
+$color-white900: map-get($palette-whites, 900);
+
+$color-grey100: map-get($palette-greys, 100);
+$color-grey300: map-get($palette-greys, 300);
+$color-grey500: map-get($palette-greys, 500);
+$color-grey700: map-get($palette-greys, 700);
+$color-grey900: map-get($palette-greys, 900);
+
+$color-black100: map-get($palette-blacks, 100);
+$color-black300: map-get($palette-blacks, 300);
+$color-black500: map-get($palette-blacks, 500);
+$color-black700: map-get($palette-blacks, 700);
+$color-black900: map-get($palette-blacks, 900);
+
+/// This placeholder sets semantic colors.
+$semantic-colors: 'primary' $color-grey500, 'danger' $color-red700,
+  'success' $color-green700, 'warning' $color-yellow300, 'info' $color-blue500;
+
+$colour-scale-list: (
+  1: 100,
+  2: 300,
+  3: 500,
+  4: 700,
+  5: 900,
+);
+
+$context-color-list: (
+  'primary': $color-grey500,
+  'danger': $color-red700,
+  'warning': $color-yellow300,
+  'info': $color-blue500,
+  'success': $color-green700,
+);
+
+$colour-palette-list: (
+  'Blue': $palette-blues,
+  'Purple': $palette-purples,
+  'Green': $palette-greens,
+  'Yellow': $palette-yellows,
+  'Red': $palette-reds,
+  'Pink': $palette-pinks,
+  'Magenta': $palette-magentas,
+  'Orange': $palette-oranges,
+  'White': $palette-whites,
+  'Grey': $palette-greys,
+  'Black': $palette-blacks,
+  'Cornflower': $palette-cornflowers,
+  'Gold': $palette-golds,
+  'Olive': $palette-olives,
+  'Emerald': $palette-emeralds,
+);
+
+$colour-palette-list-lc: (
+  'blue': $palette-blues,
+  'purple': $palette-purples,
+  'green': $palette-greens,
+  'yellow': $palette-yellows,
+  'red': $palette-reds,
+  'pink': $palette-pinks,
+  'magenta': $palette-magentas,
+  'orange': $palette-oranges,
+  'white': $palette-whites,
+  'grey': $palette-greys,
+  'black': $palette-blacks,
+  'cornflower': $palette-cornflowers,
+  'gold': $palette-golds,
+  'olive': $palette-olives,
+  'emerald': $palette-emeralds,
+);
+
+$link-color: map-get($palette-blues, 700);
+$text-color: map-get($palette-blacks, 700);
+$text-bold: 700;
+
+$border-style: 1px solid $color-white900;
+
+$container-max-width: 1366px;
+$dropdown-min-width: 192px;

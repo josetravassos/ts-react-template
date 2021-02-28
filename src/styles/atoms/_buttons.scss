@@ -1,0 +1,177 @@
+/*------------------------------------*\
+  # BUTTONS
+\*------------------------------------*/
+
+.zsg-button {
+  padding: $space-xsm $space-sm;
+  font-weight: normal;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 80px;
+  background: $color-white300;
+  border: 1px solid $color-white900;
+  box-sizing: border-box;
+  justify-content: center;
+  color: $color-grey900;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+
+  @include button-hover-focus();
+
+  &:disabled,
+  &[disabled],
+  &.disabled {
+    color: $color-grey700;
+    cursor: not-allowed;
+  }
+
+  &.pending {
+    background-color: $color-white300;
+    border-color: $color-white900;
+
+    .zsg-spinner {
+      display: block;
+    }
+
+    .zsg-button__text {
+      visibility: hidden;
+    }
+  }
+
+  .zsg-spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin-offset 1.1s infinite linear;
+    border-width: 4px;
+    width: 24px;
+    height: 24px;
+
+    &:after {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.zsg-button__icon {
+  width: $space-md;
+  height: $space-md;
+}
+
+.zsg-button--content-icon {
+  padding: 14px;
+}
+
+.zsg-button--size-small {
+  @include set-text('small');
+
+  .zsg-button__icon {
+    width: $space-sm;
+    height: $space-sm;
+  }
+}
+.zsg-button--size-large {
+  @include set-text('large');
+
+  .zsg-button__icon {
+    width: $space-lg;
+    height: $space-lg;
+  }
+}
+
+.zsg-button--shape-square {
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.zsg-button--display-link {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  justify-content: flex-start;
+  color: $color-blue700;
+
+  @include outline-hover-focus();
+  &:active {
+    background-color: transparent;
+  }
+
+  &.pending {
+    background: transparent;
+  }
+  &:disabled,
+  &.disabled {
+    color: $color-grey500;
+  }
+
+  @each $name, $palette in $colour-palette-list-lc {
+    &.zsg-button--color-#{$name} {
+      color: map-get($palette, 700);
+      &:focus {
+        text-shadow: 0px 0px 4px rgba(map-get($palette, 700), 0.5);
+      }
+    }
+  }
+}
+
+.zsg-button--table-header {
+  .zsg-button__text {
+    color: $color-grey900 !important;
+    font-weight: $text-bold;
+    text-shadow: unset;
+    padding: 5px 5px 5px 0;
+  }
+}
+
+.zsg-button--display-ghost {
+  border: none;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($color-black500, 0.1);
+  }
+
+  @each $name, $palette in $colour-palette-list-lc {
+    &.zsg-button--color-#{$name} {
+      color: map-get($palette, 700);
+    }
+  }
+}
+
+.zsg-button--type-cta {
+  background-color: $color-blue700;
+  border-color: $color-blue700;
+  color: $color-white;
+
+  &:hover,
+  &:focus {
+    background-color: $color-blue500;
+    border-color: $color-blue500;
+    color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-blue900;
+    border-color: $color-blue900;
+    color: $color-white;
+  }
+
+  &:disabled,
+  &[disabled],
+  &.disabled {
+    background-color: $color-white700;
+    border-color: $color-white700;
+    color: $color-grey700;
+  }
+
+  &.pending {
+    background-color: $color-white300;
+    border-color: $color-white900;
+  }
+}

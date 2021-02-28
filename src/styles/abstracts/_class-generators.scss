@@ -1,0 +1,86 @@
+/*-------------------------*\
+  # base texts
+\*-------------------------*/
+
+@each $key, $value in $base-text-list {
+  $objSize: map-get($value, 'font-size');
+  $objLineHeight: map-get($value, 'line-height');
+  .zsg-font--#{$key} {
+    font-size: $objSize;
+    line-height: $objLineHeight;
+  }
+}
+
+$palette-indexes: 50, 100, 300, 500, 700, 900;
+
+@each $name, $palette in $colour-palette-list-lc {
+  @each $index in $palette-indexes {
+    .zsg-color-#{$name}#{$index} {
+      color: map-get($palette, $index);
+      fill: map-get($palette, $index);
+    }
+    .zsg-bg-#{$name}#{$index} {
+      background-color: map-get($palette, $index) !important;
+    }
+    .zsg-border-#{$name}#{$index} {
+      border-color: map-get($palette, $index) !important;
+    }
+  }
+}
+
+/*------------------------------------*\
+  # COLORS 
+\*------------------------------------*/
+// Builds up BG and Colour classes
+@each $key, $value in $colour-palette-list-lc {
+  @each $cvKey, $cvValue in $colour-scale-list {
+    .zsg-bg--#{$key}-#{$cvValue} {
+      background: nth($value, $cvKey);
+    }
+
+    .zsg-colour--#{$key}-#{$cvValue} {
+      color: nth($value, $cvKey);
+    }
+
+    .zsg-link-colour--#{$key}-#{$cvValue} {
+      color: nth($value, $cvKey);
+      & a {
+        color: nth($value, $cvKey);
+      }
+    }
+
+    .zsg-link-colour-hover--#{$key}-#{$cvValue} {
+      &:hover {
+        color: nth($value, $cvKey);
+      }
+      & a:hover {
+        color: nth($value, $cvKey);
+      }
+    }
+  }
+}
+
+// Builds up context BG classes
+
+@each $context, $value in $context-color-list {
+  .zsg-bg--#{$context} {
+    background: $value;
+  }
+}
+
+$palette-indexes: 50, 100, 300, 500, 700, 900;
+
+@each $name, $palette in $colour-palette-list-lc {
+  @each $index in $palette-indexes {
+    .zsg-color-#{$name}#{$index} {
+      color: map-get($palette, $index);
+      fill: map-get($palette, $index);
+    }
+    .zsg-bg-#{$name}#{$index} {
+      background-color: map-get($palette, $index) !important;
+    }
+    .zsg-border-#{$name}#{$index} {
+      border-color: map-get($palette, $index) !important;
+    }
+  }
+}

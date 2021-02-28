@@ -1,0 +1,54 @@
+/*------------------------------------*\
+  # TYPOGRAPHY
+\*------------------------------------*/
+
+@mixin set-text($size-name) {
+  $item: map-get($base-text-list, $size-name);
+  font-size: map-get($item, 'font-size');
+  line-height: map-get($item, 'line-height');
+}
+
+$base-font-family: 'proxima-nova', sans-serif;
+
+$font-sizes: (
+  small: 14px,
+  base: 18px,
+  large: 24px,
+  xsmall: 12px,
+  h5: 18px,
+  h4: 24px,
+  h3: 32px,
+  h2: 40px,
+  h1: 48px,
+);
+
+$base-text-list: (
+  'xsmall': (
+    'font-size': 12px,
+    'line-height': 16px,
+  ),
+  'small': (
+    'font-size': 14px,
+    'line-height': 16px,
+  ),
+  'large': (
+    'font-size': 24px,
+    'line-height': 32px,
+  ),
+  'h2': (
+    'font-size': 40px,
+    'line-height': 48px,
+  ),
+  'h3': (
+    'font-size': 32px,
+    'line-height': 40px,
+  ),
+  'h4': (
+    'font-size': 24px,
+    'line-height': 32px,
+  ),
+  'h5': (
+    'font-size': 18px,
+    'line-height': 24px,
+  ),
+);

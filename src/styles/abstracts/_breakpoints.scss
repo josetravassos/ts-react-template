@@ -1,0 +1,25 @@
+/*------------------------------------*\
+  # BREAKPOINTS
+\*------------------------------------*/
+
+@mixin breakpoint($class) {
+  @if $class == max-sm {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: 1366px) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint mixin supports: max-sm, sm, md, lg -- you tried " + $class;
+  }
+}

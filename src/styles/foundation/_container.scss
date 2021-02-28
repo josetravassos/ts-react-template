@@ -1,0 +1,64 @@
+/*------------------------------------*\
+  # CONTAINER
+\*------------------------------------*/
+.zsg-container {
+  margin: 0 auto;
+  max-width: $container-max-width;
+  padding: 0 20px;
+  box-sizing: content-box;
+}
+
+.zsg-container--padding-sm,
+.zsg-container--p-sm {
+  padding: $space-sm;
+}
+
+.zsg-container--padding-lg,
+.zsg-container--p-lg {
+  padding: $space-xlg;
+}
+
+.zsg-container__header {
+  margin-bottom: $space-lg;
+}
+
+.zsg-container__body {
+  margin-bottom: $space-sm;
+}
+
+.zsg-highlight {
+  background-color: $color-white300;
+  padding: $space-xsm $space-sm;
+}
+
+.zsg-example {
+  border: solid 1px $color-white700;
+  padding: $space-md $space-xsm;
+
+  > * {
+    margin: 0 $space-xxsm;
+  }
+}
+
+.zsg-section {
+  margin: $space-xlg 0;
+}
+
+.zsg--type-rounded-border {
+  background: $color-white300;
+  border-radius: $border-radius-sm;
+  border: 1px solid $color-white900;
+}
+
+.box {
+  background: $color-white;
+  border: 1px solid $color-white700;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 24px;
+}
+
+hr {
+  border: none;
+  border-top: solid 1px $color-white700;
+}

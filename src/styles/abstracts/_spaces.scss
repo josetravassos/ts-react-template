@@ -1,0 +1,35 @@
+/*------------------------------------*\
+  # SPACES
+\*------------------------------------*/
+$spaces: (
+  'zero': 0px,
+  'xxxsm': 4px,
+  'xxsm': 8px,
+  'xsm': 12px,
+  'sm': 16px,
+  'md': 24px,
+  'lg': 32px,
+  'xlg': 40px,
+  'nav-height': 56px,
+  'xxlg': 64px,
+  'xxxlg': 80px,
+);
+
+$space-zero: map-get($spaces, 'zero');
+$space-xxxsm: map-get($spaces, 'xxxsm');
+$space-xxsm: map-get($spaces, 'xxsm');
+$space-xsm: map-get($spaces, 'xsm');
+$space-sm: map-get($spaces, 'sm');
+$space-md: map-get($spaces, 'md');
+$space-lg: map-get($spaces, 'lg');
+$space-xlg: map-get($spaces, 'xlg');
+$space-xxlg: map-get($spaces, 'xxlg');
+$space-xxxlg: map-get($spaces, 'xxxlg');
+$space-nav-height: map-get($spaces, 'nav-height');
+
+$gutters: (
+  'xs': $space-sm,
+  'sm': $space-md,
+  'md': $space-md,
+  'lg': $space-lg,
+);

@@ -1,0 +1,31 @@
+/*------------------------------------*\
+  # PADDINGS
+\*------------------------------------*/
+// For the cards
+@mixin responsive-padding($appliesTo: 'all') {
+  @if ($appliesTo == 'all') {
+    padding: $space-sm;
+    @include breakpoint('sm') {
+      padding: $space-md;
+    }
+    @include breakpoint('lg') {
+      padding: $space-md + 3;
+    }
+  } @else if ($appliesTo == 'left-right') {
+    padding: 0 $space-sm;
+    @include breakpoint('sm') {
+      padding: 0 $space-md;
+    }
+    @include breakpoint('lg') {
+      padding: 0 ($space-md + 3);
+    }
+  } @else if ($appliesTo == 'top-bottom') {
+    padding: $space-sm 0;
+    @include breakpoint('sm') {
+      padding: $space-md 0;
+    }
+    @include breakpoint('lg') {
+      padding: ($space-md + 3) 0;
+    }
+  }
+}
