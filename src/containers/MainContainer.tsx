@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 
 import About from '../containers/About';
 import Home from '../containers/Home';
@@ -12,7 +12,10 @@ function MainContainer() {
     return (
         <Router>
             <div>
-                <TopNavbar><Link to="/">Home</Link> <Link to="/about">About</Link></TopNavbar>
+                <TopNavbar>
+                    <NavLink exact={true} activeClassName='is-active' to='/'>Home</NavLink>
+                    <NavLink activeClassName='is-active' to='/about'>About</NavLink>
+                </TopNavbar>
                 <HeroImage />
                 <Switch>
                     <Route path="/about">

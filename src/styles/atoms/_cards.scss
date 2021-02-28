@@ -1,0 +1,115 @@
+/*------------------------------------*\
+  # CARDS
+\*------------------------------------*/
+
+.zsg-cards--wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    'a'
+    'b'
+    'c';
+  column-gap: $space-md;
+  row-gap: $space-md;
+  margin: $space-md 0;
+
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'a a'
+      'b c';
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'a b c';
+    grid-template-rows: auto;
+    margin: $space-lg 0;
+    column-gap: $space-lg;
+  }
+
+  > :nth-child(1) {
+    grid-area: a;
+  }
+  > :nth-child(2) {
+    grid-area: b;
+  }
+  > :nth-child(3) {
+    grid-area: c;
+  }
+}
+
+.zsg-card {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: $color-grey500;
+  color: $color-white100;
+  padding: 30px;
+
+  &__heading {
+    font-weight: bold;
+    margin: 0 0 $space-md 0;
+    @include set-text('h4');
+  }
+}
+
+.zsg-card--interactive {
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 4px 10px rgba($color-black, 0.1);
+  }
+}
+
+.zsg-card--info {
+  display: grid;
+  grid-template-rows: 32px auto 1fr auto;
+  justify-content: flex-start;
+  row-gap: 8px;
+  text-align: left;
+  padding: $space-sm;
+
+  &__icon {
+    width: auto;
+    height: 32px;
+  }
+  &__heading {
+    margin: 0;
+    @include set-text('small');
+  }
+  &__blurb {
+    margin: 0;
+    @include set-text('small');
+  }
+}
+
+.zsg-card--inner {
+  display: grid;
+  column-gap: $space-sm;
+  text-decoration: none;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  padding: $space-lg $space-md;
+  cursor: pointer;
+
+  @include outline-focus();
+
+  &__content {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: $space-xxxsm;
+    column-gap: $space-xsm;
+  }
+  &__title {
+    @include set-text('large');
+    font-weight: bold;
+  }
+  &__blurb {
+    @include set-text('small');
+  }
+}

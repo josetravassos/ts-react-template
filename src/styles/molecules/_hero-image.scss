@@ -33,3 +33,20 @@
   //     text-align: left;
   //   }
 }
+
+.zsg-hero__inner--text {
+  @include set-text(h2);
+}
+.zsg-hero__inner--img {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .placeholder {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

@@ -1,13 +1,15 @@
 import Container from "./Container";
 import React from 'react';
-
+import ImgPlaceholder from '../images/svg/ic-img-placeholder.svg';
 
 const HeroImage = () => {
     return (
         <div className="zsg-hero__wrapper">
-            <Container className="u-width-100">
+            <Container>
                 <div className="zsg-hero__inner">
-                    <p>Hero</p>
+                    <div className="zsg-hero__inner--text">Learn about all the features of the Photo app</div>
+                    <div className="zsg-hero__inner--img"><img className="placeholder" src={ImgPlaceholder} alt="" />
+                    </div>
                 </div>
             </Container>
         </div>

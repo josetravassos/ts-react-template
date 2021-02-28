@@ -3,7 +3,11 @@
 \*------------------------------------*/
 .zsg-outter-section {
   margin: 0 auto;
-  padding: 0;
+  padding: 60px 0;
   box-sizing: content-box;
   background-color: $color-white300;
+}
+.zsg-inner-section {
+  margin: 0 auto;
+  padding: 60px 0;
 }

@@ -1,0 +1,10 @@
+/*------------------------------------*\
+  # BASIC BOX
+\*------------------------------------*/
+@mixin basic-box() {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 2px;
+  background-color: $color-grey500;
+  color: $color-white100;
+}
