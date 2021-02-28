@@ -12,18 +12,16 @@ function MainContainer() {
     return (
         <Router>
             <div>
-                <TopNavbar>
-                    <Link to="/">Home</Link>&nbsp;-&nbsp;<Link to="/about">About</Link>
-                </TopNavbar>
+                <TopNavbar><Link to="/">Home</Link> <Link to="/about">About</Link></TopNavbar>
                 <HeroImage />
                 <Switch>
+                    <Route path="/about">
+                        <About />
+                    </Route>
                     <Route path="/">
                         <OutterSection>
                             <Home />
                         </OutterSection>
-                    </Route>
-                    <Route path="/about">
-                        <About />
                     </Route>
                 </Switch>
 
