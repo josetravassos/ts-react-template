@@ -1,14 +1,17 @@
 import React from 'react'
-import { IUser } from '../models/user.model'
+import { IUser } from '../lib/models/user.model'
 import Api from '../redux/api'
+import Container from '../components/Container'
+import { motion } from 'framer-motion';
+import { pageAnimation, cardsAnimation } from '../lib/animations';
 
 const Users = (props: IUser) => {
     return (
-        <>
-            <div>Name: {props?.name}</div>
-            <div>Email: {props?.email}</div>
-            <Api />
-        </>
+        <motion.div variants={pageAnimation} initial="hidden" animate="show">
+            <Container>
+                <Api />
+            </Container>
+        </motion.div>
     )
 }
 

@@ -10,9 +10,9 @@
     'a'
     'b'
     'c';
-  column-gap: $space-md;
-  row-gap: $space-md;
-  margin: $space-md 0;
+  column-gap: 1px;
+  row-gap: 1px;
+  margin: 1px 0;
 
   @include breakpoint(sm) {
     grid-template-columns: 1fr 1fr;
@@ -26,8 +26,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'a b c';
     grid-template-rows: auto;
-    margin: $space-lg 0;
-    column-gap: $space-lg;
+    // margin: $space-lg 0;
+    // column-gap: $space-lg;
   }
 
   > :nth-child(1) {
@@ -44,15 +44,17 @@
 .zsg-card {
   display: block;
   box-sizing: border-box;
-  border-radius: 4px;
-  background-color: $color-grey500;
-  color: $color-white100;
+  background-color: $color-white700;
+  color: $color-grey900;
   padding: 30px;
 
   &__heading {
     font-weight: bold;
     margin: 0 0 $space-md 0;
     @include set-text('h4');
+  }
+  &:nth-of-type(2n) {
+    background-color: $color-white500;
   }
 }
 

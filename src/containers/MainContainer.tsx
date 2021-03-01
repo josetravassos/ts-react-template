@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import About from '../containers/About';
 import Home from '../containers/Home';
+import Users from '../containers/Users';
 import TopNavbar from '../components/TopNavbar';
 import HeroImage from '../components/HeroImage';
 import OutterSection from '../components/OutterSection';
@@ -13,15 +14,18 @@ function MainContainer() {
         <Router>
             <TopNavbar>
                 <NavLink exact={true} activeClassName='is-active' to='/'>Home</NavLink>
-                <NavLink activeClassName='is-active' to='/about'>About</NavLink>
+                <NavLink activeClassName='is-active' to='/users'>Users</NavLink>
             </TopNavbar>
             <HeroImage />
             <Route
                 render={({ location }) => (
                     <AnimatePresence exitBeforeEnter initial={false}>
                         <Switch key={location.pathname}>
-                            <Route path="/about">
+                            <Route path="/about/:id">
                                 <About />
+                            </Route>
+                            <Route path="/users">
+                                <Users />
                             </Route>
                             <Route path="/">
                                 <OutterSection>

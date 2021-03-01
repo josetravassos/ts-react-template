@@ -7,7 +7,7 @@ const HeroImage = () => {
         <div className="zsg-hero__wrapper">
             <Container>
                 <div className="zsg-hero__inner">
-                    <div className="zsg-hero__inner--text">Learn about all the features of the Photo app</div>
+                    <div className="zsg-hero__inner--text">Learn about all the features of the Collection app</div>
                     <div className="zsg-hero__inner--img"><img className="placeholder" src={ImgPlaceholder} alt="" />
                     </div>
                 </div>
