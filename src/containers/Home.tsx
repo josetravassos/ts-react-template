@@ -16,7 +16,7 @@ const Home = () => {
             <Container>
                 <motion.h1 variants={titleAnimation} className="u-mb-30">Top 30</motion.h1>
                 <div className="zsg-cards--wrapper">{collection.map(card => {
-                    return <motion.div variants={cardsAnimation}>
+                    return <motion.div variants={cardsAnimation} key={card.title}>
                         <Card heading={card.title}>
                             <NavLink key={card.title} to={card.url}>link</NavLink>
                         </Card>
