@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { loadGames } from '../redux/actions/gamesActions'
 import { NavLink } from 'react-router-dom';
 import Card from '../components/Card'
@@ -16,19 +16,31 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(loadGames());
-    })
+    }, [dispatch])
+
+    const { popular, newGames, upcoming } = useSelector((state: any) => state.games);
 
     return (
         <motion.div variants={pageAnimation} initial="hidden" animate="show">
             <Container>
                 <motion.h1 variants={titleAnimation} className="u-mb-30">Top 30</motion.h1>
-                <div className="zsg-cards--wrapper">{collection.map(card => {
+                {/* <div className="zsg-cards--wrapper">{collection.map(card => {
                     return <motion.div variants={cardsAnimation} key={card.title}>
                         <Card heading={card.title}>
                             <NavLink key={card.title} to={card.url}>link</NavLink>
                         </Card>
                     </motion.div>
+                })}</div> */}
+
+                <div className="zsg-cards--wrapper">{popular.map((data: any) => {
+                    return <motion.div variants={cardsAnimation} key={data.title}>
+                        <Card heading={data.name}>
+
+                            {/* <NavLink to={data.slug}>{data.name}</NavLink> */}
+                        </Card>
+                    </motion.div>
                 })}</div>
+
             </Container>
         </motion.div>
     )

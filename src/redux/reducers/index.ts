@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import gameSReducer from './gamesReducer';
+import gamesReducer from './gamesReducer';
 
 const rootReducer = combineReducers({
-  games: gameSReducer,
+  games: gamesReducer,
 });
 
 export default rootReducer;
