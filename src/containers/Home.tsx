@@ -33,8 +33,8 @@ const Home = () => {
                 })}</div> */}
 
                 <div className="zsg-cards--wrapper">{popular.map((data: any) => {
-                    return <motion.div variants={cardsAnimation} key={data.title}>
-                        <Card heading={data.name}>
+                    return <motion.div variants={cardsAnimation} key={data.id}>
+                        <Card id={data.id} heading={data.name} >
 
                             {/* <NavLink to={data.slug}>{data.name}</NavLink> */}
                         </Card>

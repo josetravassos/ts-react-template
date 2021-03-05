@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import About from '../containers/About';
+import Detail from '../containers/Detail';
 import Home from '../containers/Home';
 import Users from '../containers/Users';
 import TopNavbar from '../components/TopNavbar';
@@ -21,8 +21,8 @@ function MainContainer() {
                 render={({ location }) => (
                     <AnimatePresence exitBeforeEnter initial={false}>
                         <Switch key={location.pathname}>
-                            <Route path="/about/:id">
-                                <About />
+                            <Route path="/detail/:id">
+                                <Detail />
                             </Route>
                             <Route path="/users">
                                 <Users />
