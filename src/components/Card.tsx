@@ -2,6 +2,7 @@ import React from 'react';
 //Redux
 import { useDispatch } from 'react-redux';
 import { loadDetail } from '../redux/actions/detailActions'
+import { Link } from 'react-router-dom';
 
 export interface ICardProps {
     id: any
@@ -12,6 +13,7 @@ export interface ICardProps {
 
 
 const Card = (props: ICardProps) => {
+
     const classBase = `
     zsg-card
   `;
@@ -26,12 +28,14 @@ const Card = (props: ICardProps) => {
 
     return (
         <div className={classBase} onClick={loadDetailHandler}>
-            {props.heading && (
-                <h2 className="zsg-card__heading">
-                    {props.heading}
-                </h2>
-            )}
-            {props.children}
+            <Link to={`/detail/${props.id}`}>
+                {props.heading && (
+                    <h2 className="zsg-card__heading">
+                        {props.heading}
+                    </h2>
+                )}
+                {props.children}
+            </Link>
         </div>
     );
 }

@@ -14,7 +14,6 @@ function MainContainer() {
         <Router>
             <TopNavbar>
                 <NavLink exact={true} activeClassName='is-active' to='/'>Home</NavLink>
-                <NavLink activeClassName='is-active' to='/users'>Users</NavLink>
             </TopNavbar>
             <HeroImage />
             <Route
@@ -23,9 +22,6 @@ function MainContainer() {
                         <Switch key={location.pathname}>
                             <Route path="/detail/:id">
                                 <Detail />
-                            </Route>
-                            <Route path="/users">
-                                <Users />
                             </Route>
                             <Route path="/">
                                 <OutterSection>

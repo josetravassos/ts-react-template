@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadGames } from '../redux/actions/gamesActions'
-import { NavLink } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
 import Card from '../components/Card'
 import Container from '../components/Container'
 import { motion } from 'framer-motion';
 import { pageAnimation, cardsAnimation, titleAnimation } from '../lib/animations';
 
-import { SimpleCollection } from '../lib/collection'
 
 const Home = () => {
-
-    const collection = SimpleCollection;
+    //  const location = useLocation();
     const dispatch = useDispatch();
 
     useEffect(() => {

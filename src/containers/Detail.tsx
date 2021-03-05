@@ -4,6 +4,9 @@ import Container from '../components/Container'
 import { motion } from 'framer-motion';
 import { pageAnimation, titleAnimation } from '../lib/animations';
 
+//Redux
+import { useSelector } from 'react-redux';
+
 
 
 //import { SimpleCollection } from '../lib/collection';
@@ -32,18 +35,26 @@ const Detail = () => {
     // }, [collections, url]);
 
 
+    //Data
+    const { screen, game, isLoading } = useSelector((state: any) => state.detail)
+
 
     return (
-        <motion.div variants={pageAnimation} initial="hidden" animate="show">
-            <Container>
-                test
-                {/* {collection && <div className="zsg-inner-section">
+        <>
+            {!isLoading && (<motion.div variants={pageAnimation} initial="hidden" animate="show">
+                <Container>
+                    <h3>{game.name}</h3>
+                    <p>Rating: {game.rating}</p>
+                    <p>{game.description}</p>
+                    {/* {collection && <div className="zsg-inner-section">
                     <motion.h1 variants={titleAnimation}>{collection.title}</motion.h1>
                     <div dangerouslySetInnerHTML={{ __html: collection.description }} />
                 </div>} */}
 
-            </Container>
-        </motion.div>
+                </Container>
+            </motion.div>)}
+
+        </>
     )
 }
 
