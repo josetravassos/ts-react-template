@@ -6,7 +6,6 @@ const TopNavbar = (props: any) => (
     <div className="zsg-navbar">
         <div className="zsg-navbar__logo"><img className="icon-placeholder" src={LogoPlaceholder} alt="" /></div>
         <div className="zsg-navbar__menu">{props.children}</div>
-        <div className="zsg-navbar__user"><img className="icon-placeholder" src={UserPlaceholder} alt="" /></div>
     </div>
 );
 

@@ -18,7 +18,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas:
-      'a a'
+      'a b'
       'b c';
   }
 
@@ -26,8 +26,6 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 'a b c';
     grid-template-rows: auto;
-    // margin: $space-lg 0;
-    // column-gap: $space-lg;
   }
 
   > :nth-child(1) {

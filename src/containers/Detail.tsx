@@ -8,18 +8,6 @@ import { pageAnimation, titleAnimation } from '../lib/animations';
 import { useSelector } from 'react-redux';
 
 
-
-//import { SimpleCollection } from '../lib/collection';
-
-// export interface ICollectionData {
-//     url: string;
-//     category: string;
-//     title: string;
-//     foto: string;
-//     description: string;
-//     prevState: null
-// }
-
 const Detail = () => {
     // const history = useHistory();
     // const url = history.location.pathname;
@@ -38,26 +26,18 @@ const Detail = () => {
     //Data
     const { screen, game, isLoading } = useSelector((state: any) => state.detail)
 
-
     return (
         <>
             {!isLoading && (<motion.div variants={pageAnimation} initial="hidden" animate="show">
                 <Container>
-                    <h3>{game.name}</h3>
+                    <motion.h1 variants={titleAnimation}>{game.name}</motion.h1>
                     <p>Rating: {game.rating}</p>
-                    <p>{game.description}</p>
-                    {/* {collection && <div className="zsg-inner-section">
-                    <motion.h1 variants={titleAnimation}>{collection.title}</motion.h1>
-                    <div dangerouslySetInnerHTML={{ __html: collection.description }} />
-                </div>} */}
-
+                    <div dangerouslySetInnerHTML={{ __html: game.description }} />
                 </Container>
             </motion.div>)}
 
         </>
     )
 }
-
-
 
 export default Detail

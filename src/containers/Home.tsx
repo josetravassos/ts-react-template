@@ -16,19 +16,27 @@ const Home = () => {
         dispatch(loadGames());
     }, [dispatch])
 
-    const { popular, newGames, upcoming } = useSelector((state: any) => state.games);
+    const { popular, upcoming } = useSelector((state: any) => state.games);
 
     return (
         <motion.div variants={pageAnimation} initial="hidden" animate="show">
             <Container>
-                <motion.h1 variants={titleAnimation} className="u-mb-30">Top 30</motion.h1>
+                <motion.h1 variants={titleAnimation} className="u-mb-30">Upcoming</motion.h1>
+                <div className="zsg-cards--wrapper">{upcoming.map((data: any) => {
+                    return <motion.div variants={cardsAnimation} key={data.id}>
+                        <Card id={data.id} heading={data.name} >
+                        </Card>
+                    </motion.div>
+                })}</div>
 
+                <motion.h1 variants={titleAnimation} className="u-mb-30">Popular</motion.h1>
                 <div className="zsg-cards--wrapper">{popular.map((data: any) => {
                     return <motion.div variants={cardsAnimation} key={data.id}>
                         <Card id={data.id} heading={data.name} >
                         </Card>
                     </motion.div>
                 })}</div>
+
 
             </Container>
         </motion.div>

@@ -24,9 +24,7 @@ function MainContainer() {
                                 <Detail />
                             </Route>
                             <Route path="/">
-                                <OutterSection>
-                                    <Home />
-                                </OutterSection>
+                                <Home />
                             </Route>
                         </Switch>
                     </AnimatePresence>)}
