@@ -4,11 +4,15 @@ import { useDispatch } from 'react-redux';
 import { loadDetail } from '../redux/actions/detailActions'
 import { Link } from 'react-router-dom';
 
+
+import { smallImage } from "../helpers/image-resizer";
+
 export interface ICardProps {
     id: any
     children?: any;
     className?: string;
     heading?: string | JSX.Element;
+    image?: string
 }
 
 
@@ -35,6 +39,7 @@ const Card = (props: ICardProps) => {
                     </h2>
                 )}
                 {props.children}
+                <img src={smallImage(props.image, 640)} alt="" />
             </Link>
         </div>
     );

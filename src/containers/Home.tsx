@@ -24,7 +24,7 @@ const Home = () => {
                 <motion.h1 variants={titleAnimation} className="u-mb-30">Upcoming</motion.h1>
                 <div className="zsg-cards--wrapper">{upcoming.map((data: any) => {
                     return <motion.div variants={cardsAnimation} key={data.id}>
-                        <Card id={data.id} heading={data.name} >
+                        <Card id={data.id} heading={data.name} image={data.background_image}>
                         </Card>
                     </motion.div>
                 })}</div>
@@ -32,7 +32,7 @@ const Home = () => {
                 <motion.h1 variants={titleAnimation} className="u-mb-30">Popular</motion.h1>
                 <div className="zsg-cards--wrapper">{popular.map((data: any) => {
                     return <motion.div variants={cardsAnimation} key={data.id}>
-                        <Card id={data.id} heading={data.name} >
+                        <Card id={data.id} heading={data.name} image={data.background_image}>
                         </Card>
                     </motion.div>
                 })}</div>
